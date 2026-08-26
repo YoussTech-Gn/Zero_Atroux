@@ -1,83 +1,53 @@
-#[allow(unused)]
-// Make it work
-// use std::mem::size_of_val;
 // fn main() {
-//     let c1 : char = 'a';// bytes
-//     assert_eq!(size_of_val(&c1),4); 
+//     let x = 5u32;
 
-//     let c2 :char = '中'; // bytes
-//     assert_eq!(size_of_val(&c2),4); 
+//     let y : u32 = {
+//         let x_squared = x * x;
+//         let x_cube = x_squared * x;
 
-//     println!("Success!");
-// } 
+//         // This expression will be assigned to `y`
+//         x_cube + x_squared + x //155
+//     };
 
-// fn main()
-// {
-//     let chr : char = 'z';
-//      let st : &str = "Hello";
-//     println!("{} > {}" , st , chr);
+//     let z : u32 = {
+//         // The semicolon suppresses this expression and `()` is assigned to `z`
+//         2 * x
+//     };
+
+//     println!("x  will retutn {:?}", x);
+//     println!("y  will retutn {:?}", y);
+//     println!("z  will retutn {:?}", z);
 // }
 
-// // double quotion for string 
-// // single is for characters
-
-
-// // Make it work
+// // Make it work with two ways
 // fn main() {
-//     let c1 = '中';
-//     print_char(c1);
-// } 
+//    let v = {
+//        let mut x = 1;
+//        x + 2
+//    };
+//    println!("{}" , v);
 
-// fn print_char(c : char) {
-//     println!("{}", c);
+//    assert_eq!(v, 3);
+
+//    println!("Success!");
 // }
 
-// Make println! work
+
 // fn main() {
-//     let f: bool = true;
+//    let v = 3;
+//    assert!(v == 3);
 
-//     let t : bool = true;
-//     if !!t {
-//         println!("Success!");
-//     }
-// } 
-
-
-// // Make it work
-// fn main() {
-//     let f = true;
-//     let t : bool = false && true;
-//    assert_ne!(!f , t, "we are testing that the values are not equal");
-//     assert_eq!(t, f);
-//     println!("{}"  , t);
-
-//     println!("Success!");
+//    println!("Success!");
 // }
 
-// // Make it work, don't modify `implicitly_ret_unit` !
-// fn main() {
-//     let _v: () = ();
 
-//     let v  = ();
-//     assert_eq!(v, implicitly_ret_unit());
+fn main() {
+    let s = sum(1 , 2);
+    assert_eq!(s, 3);
 
-//     println!("Success!");
-// }
+    println!("Success!");
+}
 
-// fn implicitly_ret_unit() {
-//     println!("I will return a ()");
-// }
-
-// // Don't use this one
-// fn explicitly_ret_unit() -> () {
-//     println!("I will return a ()");
-// }
-
-// Modify `4` in assert to make it work
-// use std::mem::size_of_val;
-// fn main() {
-//     let unit: () = ();
-//     assert!(size_of_val(&unit) == 0);
-
-//     println!("Success!");
-// }
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
+}
