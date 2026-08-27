@@ -1,53 +1,78 @@
+   
 // fn main() {
-//     let x = 5u32;
+//     // Don't modify the following two lines!
+//     let (x, y) = (1, 2);
+//     let s = sum(x, y);
+//     assert_eq!(s, 3);
 
-//     let y : u32 = {
-//         let x_squared = x * x;
-//         let x_cube = x_squared * x;
-
-//         // This expression will be assigned to `y`
-//         x_cube + x_squared + x //155
-//     };
-
-//     let z : u32 = {
-//         // The semicolon suppresses this expression and `()` is assigned to `z`
-//         2 * x
-//     };
-
-//     println!("x  will retutn {:?}", x);
-//     println!("y  will retutn {:?}", y);
-//     println!("z  will retutn {:?}", z);
+//     println!("Success!");
 // }
 
-// // Make it work with two ways
-// fn main() {
-//    let v = {
-//        let mut x = 1;
-//        x + 2
-//    };
-//    println!("{}" , v);
-
-//    assert_eq!(v, 3);
-
-//    println!("Success!");
+// fn sum(x : i32, y: i32) ->i32 {
+//     x + y
 // }
 
 
-// fn main() {
-//    let v = 3;
-//    assert!(v == 3);
 
-//    println!("Success!");
+// fn main() {
+//    print("I think im good!");
+// }
+
+// // Replace i32 with another type
+// fn print(txt :&str) -> () {
+//    println!("{}" ,txt);
+// }
+
+// Solve it in two ways
+// DON'T let `println!` work *
+// fn main() {
+//     never_return();
+
+//     println!("Failed!");
+// }
+
+// fn never_return() -> ! {
+//     // Implement this function, don't modify the fn signatures
+//     panic!()
+// }
+
+
+// fn main() {
+//     println!("Success!");
+// }
+
+// fn get_option(tp: u8) -> Option<i32> {
+//     match tp {
+//         1 => {
+//             // TODO
+//         }
+//         _ => {
+//             // TODO
+//         }
+//     };
+    
+//     // Rather than returning a None, we use a diverging function instead
+//     never_return_fn()
+// }
+
+// // IMPLEMENT this function in THREE ways
+// fn never_return_fn() -> ! {
+//     panic!()
 // }
 
 
 fn main() {
-    let s = sum(1 , 2);
-    assert_eq!(s, 3);
+    // FILL in the blank
+    let b = false;
 
-    println!("Success!");
-}
+    let _v = match b {
+        true => 1,
+        // Diverging functions can also be used in match expression to replace a value of any value
+        false => {
+            println!("Success!");
+            panic!("we have no value for `false`, but we can panic");
+        }
+    };
 
-fn sum(x: i32, y: i32) -> i32 {
-    x + y
+    println!("Exercise Failed if printing out this line!");
 }
