@@ -1,78 +1,69 @@
-   
-// fn main() {
-//     // Don't modify the following two lines!
-//     let (x, y) = (1, 2);
-//     let s = sum(x, y);
-//     assert_eq!(s, 3);
-
-//     println!("Success!");
-// }
-
-// fn sum(x : i32, y: i32) ->i32 {
-//     x + y
-// }
+//          Rust has three kinds of loops : Loop , while , for
 
 
 
-// fn main() {
-//    print("I think im good!");
-// }
-
-// // Replace i32 with another type
-// fn print(txt :&str) -> () {
-//    println!("{}" ,txt);
-// }
-
-// Solve it in two ways
-// DON'T let `println!` work *
-// fn main() {
-//     never_return();
-
-//     println!("Failed!");
-// }
-
-// fn never_return() -> ! {
-//     // Implement this function, don't modify the fn signatures
-//     panic!()
-// }
-
-
-// fn main() {
-//     println!("Success!");
-// }
-
-// fn get_option(tp: u8) -> Option<i32> {
-//     match tp {
-//         1 => {
-//             // TODO
+// fn main()
+// {
+//     let mut count = 0;
+//     's : loop {
+//         println!(" >> count is = {}" , count);
+        
+//         let mut rem = 10;
+//         loop {
+//             println!(" >> rem is = {}" , rem);
+//             if rem == 0 {
+//                 println!("rem has reached 0 = {} and count is {} and the main loop will now continue" , rem , count);
+//                 break ;
+//             }
+//             if count == 2{
+//                 println!("count has reached 2 = {}" , count);
+//                 break 's;
+//             }
+//             rem -= 1;
 //         }
-//         _ => {
-//             // TODO
-//         }
-//     };
-    
-//     // Rather than returning a None, we use a diverging function instead
-//     never_return_fn()
-// }
+//         count +=1;
+//     }
 
-// // IMPLEMENT this function in THREE ways
-// fn never_return_fn() -> ! {
-//     panic!()
+//     println!("End Count = {}" , count)
 // }
 
 
-fn main() {
-    // FILL in the blank
-    let b = false;
 
-    let _v = match b {
-        true => 1,
-        // Diverging functions can also be used in match expression to replace a value of any value
-        false => {
-            println!("Success!");
-            panic!("we have no value for `false`, but we can panic");
-        }
-    };
+// fn main() {
+//     let mut number = 3;
 
-    println!("Exercise Failed if printing out this line!");
+//     while number != 0 {
+//         println!("{number}!");
+
+//         number -= 1;
+        
+//     }
+//     println!("-----------------------------------------");
+//     while number < 20 {
+//         println!("{number}!");
+//         number += 1;
+//     }
+
+//     println!("LIFTOFF!!! \n num : {}" , number );
+// }
+
+// fn main() {
+//     let a = ['a' , 'b' , 'c' , 'd' , 'f' , 'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o'];
+//     let mut index = 0;
+
+//     while index < a.len() {
+//         println!("the value is: [{}] and length of a collection wich are rest to see {}", a[index] , a.len() - index);
+
+//         index += 1;
+//     }
+//     for element in a {
+// println!("the value is: {element}");
+// }
+// }
+
+fn main(){
+    for number in (1..=20).rev(){
+        println!("num : {}" , number)
+    }
 }
+
