@@ -1,69 +1,58 @@
-//          Rust has three kinds of loops : Loop , while , for
+// // use String::from;
 
+// struct User {
+//     name : String,
+//     email : String,
+//     active: bool
+// }
+// struct Color(i32 , i32 , u8);
+// struct Point(i32 , i32 , ());
+// fn main(){
+//     let mut new = build_new_user(String::from("h@proton.me"), String::from("Saliou"));
+//     println!("we have new his called [{}] his email Adress : [{}] and his connected right now! {}" , new.name , new.email , new.active );
+//     println!("we have new his called [{}] his email Adress : [{}] and his connected right now! {}" , new.name , new.email , new.active );
+//     let  mut same_user = &mut new;
+//     same_user.email = String::from("Mouhammed@pront.me");
+//     println!("we have new his called [{}] his email Adress : [{}] and his connected right now! {}" , new.name , new.email , new.active );
+    
 
-
-// fn main()
-// {
-//     let mut count = 0;
-//     's : loop {
-//         println!(" >> count is = {}" , count);
-        
-//         let mut rem = 10;
-//         loop {
-//             println!(" >> rem is = {}" , rem);
-//             if rem == 0 {
-//                 println!("rem has reached 0 = {} and count is {} and the main loop will now continue" , rem , count);
-//                 break ;
-//             }
-//             if count == 2{
-//                 println!("count has reached 2 = {}" , count);
-//                 break 's;
-//             }
-//             rem -= 1;
-//         }
-//         count +=1;
-//     }
-
-//     println!("End Count = {}" , count)
+//     // ----------
+//     let black = Color(21 , 5, 0);
+//     let origin : Point = Point(8 , 10,  ());
 // }
 
-
-
-// fn main() {
-//     let mut number = 3;
-
-//     while number != 0 {
-//         println!("{number}!");
-
-//         number -= 1;
-        
+// fn build_new_user(email : String , name : String) -> User{
+//     User {
+//         active : true,
+//         email,
+//         name
 //     }
-//     println!("-----------------------------------------");
-//     while number < 20 {
-//         println!("{number}!");
-//         number += 1;
-//     }
-
-//     println!("LIFTOFF!!! \n num : {}" , number );
 // }
 
-// fn main() {
-//     let a = ['a' , 'b' , 'c' , 'd' , 'f' , 'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o'];
-//     let mut index = 0;
+#[derive(Debug)]
 
-//     while index < a.len() {
-//         println!("the value is: [{}] and length of a collection wich are rest to see {}", a[index] , a.len() - index);
-
-//         index += 1;
-//     }
-//     for element in a {
-// println!("the value is: {element}");
-// }
-// }
-
-fn main(){
-    for number in (1..=20).rev(){
-        println!("num : {}" , number)
-    }
+struct  Reactangle {
+    width : i32,
+    height : i32,
 }
 
+fn main(){
+    // let w = 23;
+    // let h = 23;
+    // let rect : (i32 , i32)= (40  , 20);
+    let rect : Reactangle = Reactangle { width: 20, height: 30 };
+    // let x = rect;
+    println!("Our Struct is {:#?}" , rect);
+    println!("The area of the rectangle is {} square pixels." , area(&rect));
+    eprintln!("Erro Gys");
+    // println("jf");
+    println!();
+    println!();
+    dbg!(&rect);
+}
+
+
+
+fn area(dimension : &Reactangle) -> i32 {
+    dimension.width * dimension.height
+}
