@@ -1,21 +1,21 @@
-enum Shape {
-    Circle(f64),
-    Rectangle(f64, f64),
+enum Command {
+    Move { x: i32, y: i32 },
+    ChangeColor(u8 , u8 , u8),
 }
 
-impl Shape {
-    fn area(&self) -> f64{
-        match self {
-            Shape::Circle(radius) => std::f64::consts::PI * radius * radius,
-            Shape::Rectangle(width, height) => width * height,
-        }
-    }
-}
+
 
 fn main() {
-    let circle = Shape::Circle(5.0);
-    let rectangle = Shape::Rectangle(4.0, 6.0);
+    let command = Command::Move { x: 10, y: 20 };
+    let command = Command::ChangeColor(255, 233, 0);
+    // it's shadowed the last command, so the first one is not used anymore
 
-    println!("Area of the circle: {}", circle.area());
-    println!("Area of the rectangle: {}", rectangle.area());
+    match command {
+        Command::Move { x, y } => {
+            println!("Moving to coordinates: ({}, {})", x, y);
+        }
+        Command::ChangeColor(r, g, b) => {
+            println!("Changing color to RGB({}, {}, {})", r, g, b);
+        }
+    }
 }
