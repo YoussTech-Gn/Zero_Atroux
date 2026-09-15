@@ -1,25 +1,21 @@
-#[derive(Debug)]
-enum TrafficLight {
-    Red,
-    Yellow,
-    Green,
+enum Shape {
+    Circle(f64),
+    Rectangle(f64, f64),
 }
 
-impl TrafficLight {
-    fn time_in_sec(&self) -> u8{
+impl Shape {
+    fn area(&self) -> f64{
         match self {
-            TrafficLight::Red => 60,
-            TrafficLight::Yellow => 5,
-            TrafficLight::Green => 60,
-            // what the difference between Self and TrafficLight in this context?
-            // Self::Red => 60,
-            // Self::Yellow => 5,
-            // Self::Green => 60,
+            Shape::Circle(radius) => std::f64::consts::PI * radius * radius,
+            Shape::Rectangle(width, height) => width * height,
         }
     }
 }
 
 fn main() {
-    let light = TrafficLight::Red;
-    println!("Time for {:?} light: {} seconds", light, light.time_in_sec());
+    let circle = Shape::Circle(5.0);
+    let rectangle = Shape::Rectangle(4.0, 6.0);
+
+    println!("Area of the circle: {}", circle.area());
+    println!("Area of the rectangle: {}", rectangle.area());
 }
