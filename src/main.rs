@@ -1,41 +1,25 @@
-// #[derive(Debug)]
-// enum PaymentMethod {
-//     Cash,
-//     CreditCard(String),
-//     BankTransfer(u32),
-// }
+#[derive(Debug)]
+enum TrafficLight {
+    Red,
+    Yellow,
+    Green,
+}
 
-// fn main() {
-//     let mut pay1 = PaymentMethod::Cash;
-//     pay1 = PaymentMethod::CreditCard(String::from("1234-5678-9012-3456"));
-//     let pay2 = PaymentMethod::CreditCard(String::from("4111-2222-3333-4444"));
-//     let pay3 = PaymentMethod::BankTransfer(99887766);
-    
-//     // println!("{:?}, {:?}, {:?}", pay1, pay2, pay3);
+impl TrafficLight {
+    fn time_in_sec(&self) -> u8{
+        match self {
+            TrafficLight::Red => 60,
+            TrafficLight::Yellow => 5,
+            TrafficLight::Green => 60,
+            // what the difference between Self and TrafficLight in this context?
+            // Self::Red => 60,
+            // Self::Yellow => 5,
+            // Self::Green => 60,
+        }
+    }
+}
 
-//     match pay1 {
-//         PaymentMethod::Cash => println!("Paid in cash"),
-//         PaymentMethod::CreditCard(card_number) => println!("Paid with credit card: {}", card_number),
-//         PaymentMethod::BankTransfer(account_number) => println!("Paid with bank transfer: {}", account_number),
-//     }
-// }
-
-
-// enum ApiResponse {
-//     Loading,
-//     Success(String),
-//     Error(String),
-// }
-
-// fn main() {
-//     let response = ApiResponse::Error(String::from("404 Not Found"));
-
-//     match response {
-//         ApiResponse::Loading => println!("جاري التحميل..."),
-//         ApiResponse::Success(data) => println!("البيانات: {}", data),
-//         // اكتب سطر التفكيك والطباعة لحالة Error هنا!s
-//         ApiResponse::Error(error_message) => println!("حدث خطأ: {}", error_message),
-//     }
-// }
-
-
+fn main() {
+    let light = TrafficLight::Red;
+    println!("Time for {:?} light: {} seconds", light, light.time_in_sec());
+}
